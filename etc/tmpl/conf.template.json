@@ -1,0 +1,113 @@
+{
+  "Meta": {
+    "Title": "boiler-plate-api",
+    "Description": "my boiler plate api",
+    "Host": "{{ META_HOST }}",
+    "Basepath": "/",
+    "Version": ""
+  },
+  "Gin": {
+    "Host": "{{ HTTP_HOST }}",
+    "Port": "{{ HTTP_PORT }}",
+    "Mode": "{{ HTTP_MODE }}",
+    "Timeout": "{{ HTTP_TIMEOUT }}",
+    "ShutdownTimeout": "10s",
+    "LogRequest": "{{ HTTP_LOG_REQUEST }}",
+    "LogResponse": "{{ HTTP_LOG_RESPONSE }}",
+    "CORS": {
+      "Mode": "{{ HTTP_CORS_MODE }}"
+    },
+    "Swagger": {
+      "Basicauth": {
+        "Username": "{{ HTTP_SWAGGER_USERNAME }}",
+        "Password": "{{ HTTP_SWAGGER_PASSWORD }}"
+      },
+      "Enabled": "{{ HTTP_SWAGGER_ENABLED }}",
+      "Path": "{{ HTTP_SWAGGER_PATH }}"
+    },
+    "Dummy": {
+      "Enabled": "{{ HTTP_DUMMY_ENABLED }}",
+      "Path": "{{ HTTP_DUMMY_PATH }}"
+    }
+  },
+  "Log": {
+    "Level": "{{ LOG_LEVEL }}"
+  },
+  "SQL": {
+    "LogQuery": "{{ SQL_LOG_QUERY }}",
+    "Driver": "{{ SQL_DRIVER }}",
+    "Follower": {
+      "Host": "{{ SQL_FOLLOWER_HOST }}",
+      "Port": "{{ SQL_FOLLOWER_PORT }}",
+      "DB": "{{ SQL_FOLLOWER_DB }}",
+      "User": "{{ SQL_FOLLOWER_USER }}",
+      "Password": "{{ SQL_FOLLOWER_PASSWORD }}",
+      "SSL": null,
+      "Schema": null,
+      "Options": {
+        "MaxLifeTime": "{{ SQL_FOLLOWER_MAX_LIFE_TIME }}",
+        "MaxIdle": "{{ SQL_FOLLOWER_MAX_IDLE }}",
+        "MaxOpen": "{{ SQL_FOLLOWER_MAX_OPEN }}"
+      }
+    },
+    "Leader": {
+      "Host": "{{ SQL_LEADER_HOST }}",
+      "Port": "{{ SQL_LEADER_PORT }}",
+      "DB": "{{ SQL_LEADER_DB }}",
+      "User": "{{ SQL_LEADER_USER }}",
+      "Password": "{{ SQL_LEADER_PASSWORD }}",
+      "SSL": null,
+      "Schema": null,
+      "Options": {
+        "MaxLifeTime": "{{ SQL_LEADER_MAX_LIFE_TIME }}",
+        "MaxIdle": "{{ SQL_LEADER_MAX_IDLE }}",
+        "MaxOpen": "{{ SQL_LEADER_MAX_OPEN }}"
+      }
+    }
+  },
+  "Auth": {
+    "AccessTokenExpireTime": "{{ AUTH_ACCESS_TOKEN_EXPIRE_TIME }}",
+    "RefreshTokenExpireTime": "{{ AUTH_REFRESH_TOKEN_EXPIRE_TIME }}",
+    "AccessTokenType": "{{ AUTH_ACCESS_TOKEN_TYPE }}",
+    "RefreshTokenType": "{{ AUTH_REFRESH_TOKEN_TYPE }}",
+    "SigningKey": "{{ AUTH_SIGNING_KEY }}"
+  },
+  "Redis": {
+    "Protocol": "{{ REDIS_PROTOCOL }}",
+    "Host": "{{ REDIS_HOST }}",
+    "Port": "{{ REDIS_PORT }}",
+    "Username": "{{ REDIS_USERNAME }}",
+    "Password": "{{ REDIS_PASSWORD }}",
+    "DefaultTTL": "{{ REDIS_DEFAULT_TTL }}",
+    "TLS": {
+      "Enabled": "{{ REDIS_TLS_ENABLED }}",
+      "InsecureSkipVerify": "{{ REDIS_TLS_INSECURE_SKIP_VERIFY }}"
+    }
+  },
+  "Translator":{
+    "FallbackLanguageID": "en",
+    "SupportedLanguageIDs": ["id"],
+    "TranslationDir": "./docs/translation"
+  },
+  "RateLimiter":{
+    "Enabled": "{{ RATE_LIMITER_ENABLED }}",
+    "Period": "{{ RATE_LIMITER_PERIOD }}",
+    "Limit": "{{ RATE_LIMITER_LIMIT }}"
+  },
+  "Parser": {
+    "JSONOptions": {
+      "Config": "default",
+      "IndentionStep": "0",
+      "MarshalFloatWith6Digits": false,
+      "EscapeHTML": true,
+      "SortMapKeys": false,
+      "UseNumber": true,
+      "DisallowUnknownFields": false,
+      "TagKey": "json",
+      "OnlyTaggedField": true,
+      "ValidateJSONRawMessage": true,
+      "ObjectFieldMustBeSimpleString": false,
+      "CasesenSitive": true
+    }
+  }
+}

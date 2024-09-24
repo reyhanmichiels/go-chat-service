@@ -1,4 +1,4 @@
-name: boiler-plate-local
+name: chat-service-local
 services:
   mysql:
     # use this for mac

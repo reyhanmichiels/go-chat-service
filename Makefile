@@ -2,6 +2,10 @@
 swag-install:
 	@go install github.com/swaggo/swag/cmd/swag@v1.6.7
 
+.PHONY: prepare
+prepare: swag-install swaggo
+	@go mod download
+
 .PHONY: swaggo
 swaggo:
 	@/bin/rm -rf ./docs/swagger
